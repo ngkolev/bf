@@ -1,2 +1,2 @@
 # bf
-Brainfuck interpreter with Visitordesign pattern
+Brainfuck interpreter using Visitor design pattern
