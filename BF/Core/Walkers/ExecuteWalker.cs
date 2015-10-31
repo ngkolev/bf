@@ -7,7 +7,6 @@ namespace BF.Core.Walkers
 {
     class ExecuteWalker : IWalker
     {
-
         public ExecuteWalker(IInputOutput io)
         {
             throw new NotImplementedException();

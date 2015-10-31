@@ -8,5 +8,7 @@ namespace BF.Core.Expressions
         {
             walker.Walk(this);
         }
+
+        public ProgramExpression Body { get; set; }
     }
 }

@@ -9,46 +9,75 @@ namespace BF.Core.Walkers
     {
         public PrettyPrintWalker(IInputOutput io)
         {
+            IO = io;
         }
+
+        private IInputOutput IO { get; set; }
+        private int Indentation { get; set; }
 
         public void Walk(DataValueDecrementExpression expression)
         {
-            throw new NotImplementedException();
+            Print('-');
         }
 
         public void Walk(DataValueIncrementExpression expression)
         {
-            throw new NotImplementedException();
+            Print('+');
         }
 
         public void Walk(DataPointerDecrementExpression expression)
         {
-            throw new NotImplementedException();
+            Print('<');
         }
 
         public void Walk(DataPointerIncrementExpression expression)
         {
-            throw new NotImplementedException();
+            Print('>');
         }
 
         public void Walk(WriteCharacterExpression expression)
         {
-            throw new NotImplementedException();
+            Print('.');
         }
 
         public void Walk(ReadCharacterExpression expression)
         {
-            throw new NotImplementedException();
+            Print(',');
         }
 
         public void Walk(LoopExpression expression)
         {
-            throw new NotImplementedException();
+            NewLine();
+            Print('[');
+            NewLine();
+            Indentation++;
+            Walk(expression.Body);
+            Indentation--;
+            NewLine();
+            Print(']');
+            NewLine();
         }
 
         public void Walk(ProgramExpression expression)
         {
-            throw new NotImplementedException();
+            foreach (var item in expression.Expressions)
+            {
+                item.Accept(this);
+            }
+        }
+
+        private void Print(char character)
+        {
+            for (var i = 0; i < Indentation; i++)
+            {
+                IO.WriteChar(' ');
+            }
+            IO.WriteChar(character);
+        }
+
+        private void NewLine()
+        {
+            IO.WriteText(Environment.NewLine);
         }
     }
 }
