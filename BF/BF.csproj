@@ -59,6 +59,7 @@
     <Compile Include="Core\TokenType.cs" />
     <Compile Include="Core\Lexer.cs" />
     <Compile Include="Core\Expressions\WriteCharacterExpression.cs" />
+    <Compile Include="Core\Walkers\PrettyPrintWalker.cs" />
     <Compile Include="IO\ConsoleInputOutput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
