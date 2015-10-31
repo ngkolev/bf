@@ -1,11 +1,16 @@
 ﻿using System;
 using BF.Core.Abstraction;
 using BF.Core.Expressions;
+using BF.IO;
 
 namespace BF.Core.Walkers
 {
     class PrettyPrintWalker : IWalker
     {
+        public PrettyPrintWalker(ConsoleInputOutput io)
+        {
+        }
+
         public void Walk(DataValueDecrementExpression expression)
         {
             throw new NotImplementedException();

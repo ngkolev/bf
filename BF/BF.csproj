@@ -43,6 +43,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArgumentParser.cs" />
+    <Compile Include="ConsoleManager.cs" />
     <Compile Include="Core\Context.cs" />
     <Compile Include="Core\Walkers\ExecuteWalker.cs" />
     <Compile Include="Core\Expressions\DataPointerDecrementExpression.cs" />
@@ -60,6 +62,7 @@
     <Compile Include="Core\Lexer.cs" />
     <Compile Include="Core\Expressions\WriteCharacterExpression.cs" />
     <Compile Include="Core\Walkers\PrettyPrintWalker.cs" />
+    <Compile Include="IO\FileReader.cs" />
     <Compile Include="IO\ConsoleInputOutput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
