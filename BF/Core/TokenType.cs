@@ -2,23 +2,13 @@ namespace BF.Core
 {
     enum TokenType
     {
-        DataValueReduce,
+        DataValueDecrement,
         DataValueIncrement,
-        DataPointerReduce,
+        DataPointerDecrement,
         DataPointerIncrement,
         WriteCharacter,
         ReadCharacter,
         LoopStart,
-        LoopEnd
-    }
-
-    interface IExpression
-    {
-        void Accept(IVisitor visitor);
-    }
-
-    interface IVisitor
-    {
-        
+        LoopEnd,
     }
 }
