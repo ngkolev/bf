@@ -1,4 +1,4 @@
-﻿namespace BF.Core
+﻿namespace BF.Core.Abstraction
 {
     interface IExpression
     {

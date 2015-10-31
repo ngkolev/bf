@@ -1,12 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using BF.Core.Expressions;
 
 namespace BF.Core
 {
     class Parser
     {
+        public Parser(ICollection<TokenType> tokens)
+        {
+            throw new NotImplementedException();
+        }
+
+        public ProgramExpression Parse()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -44,21 +44,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Core\Context.cs" />
-    <Compile Include="Core\DataPointerDecrement.cs" />
-    <Compile Include="Core\DataPointerIncrement.cs" />
-    <Compile Include="Core\DataValueDecrement.cs" />
-    <Compile Include="Core\DataValueIncrement.cs" />
-    <Compile Include="Core\IExpression.cs" />
-    <Compile Include="Core\IInputOutput.cs" />
-    <Compile Include="Core\IWalker.cs" />
-    <Compile Include="Core\LoopEnd.cs" />
-    <Compile Include="Core\LoopStart.cs" />
+    <Compile Include="Core\Walkers\ExecuteWalker.cs" />
+    <Compile Include="Core\Expressions\DataPointerDecrementExpression.cs" />
+    <Compile Include="Core\Expressions\DataPointerIncrementExpression.cs" />
+    <Compile Include="Core\Expressions\DataValueDecrementExpression.cs" />
+    <Compile Include="Core\Expressions\DataValueIncrementExpression.cs" />
+    <Compile Include="Core\Abstraction\IExpression.cs" />
+    <Compile Include="Core\Abstraction\IInputOutput.cs" />
+    <Compile Include="Core\Abstraction\IWalker.cs" />
+    <Compile Include="Core\Expressions\LoopExpression.cs" />
+    <Compile Include="Core\Expressions\ProgramExpression.cs" />
     <Compile Include="Core\Parser.cs" />
-    <Compile Include="Core\ReadCharacter.cs" />
+    <Compile Include="Core\Expressions\ReadCharacterExpression.cs" />
     <Compile Include="Core\TokenType.cs" />
-    <Compile Include="Core\Interpreter.cs" />
     <Compile Include="Core\Lexer.cs" />
-    <Compile Include="Core\WriteCharacter.cs" />
+    <Compile Include="Core\Expressions\WriteCharacterExpression.cs" />
     <Compile Include="IO\ConsoleInputOutput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,6 +66,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

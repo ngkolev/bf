@@ -1,6 +1,8 @@
-﻿namespace BF.Core
+﻿using BF.Core.Abstraction;
+
+namespace BF.Core.Expressions
 {
-    class DataPointerDecrement : IExpression
+    class LoopExpression : IExpression
     {
         public void Accept(IWalker walker)
         {
