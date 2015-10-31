@@ -9,47 +9,58 @@ namespace BF.Core.Walkers
     {
         public ExecuteWalker(IInputOutput io)
         {
-            throw new NotImplementedException();
+            Context = new Context();
+            IO = io;
         }
+        private Context Context { get; set; }
+        private IInputOutput IO { get; set; }
 
         public void Walk(DataValueDecrementExpression expression)
         {
-            throw new NotImplementedException();
+            Context.Value--;
         }
 
         public void Walk(DataValueIncrementExpression expression)
         {
-            throw new NotImplementedException();
+            Context.Value++;
         }
 
         public void Walk(DataPointerDecrementExpression expression)
         {
-            throw new NotImplementedException();
+            Context.PreviousValue();
         }
 
         public void Walk(DataPointerIncrementExpression expression)
         {
-            throw new NotImplementedException();
+            Context.NextValue();
         }
 
         public void Walk(WriteCharacterExpression expression)
         {
-            throw new NotImplementedException();
+            var readCharacter = IO.ReadChar();
+            Context.Value = readCharacter;
         }
 
         public void Walk(ReadCharacterExpression expression)
         {
-            throw new NotImplementedException();
+            var value = Context.Value;
+            IO.WriteChar(value);
         }
 
         public void Walk(LoopExpression expression)
         {
-            throw new NotImplementedException();
+            while (Context.Value != '\0')
+            {
+                expression.Body.Accept(this);
+            }
         }
 
         public void Walk(ProgramExpression expression)
         {
-            throw new NotImplementedException();
+            foreach (var item in expression.Expressions)
+            {
+                item.Accept(this);
+            }
         }
     }
 }
