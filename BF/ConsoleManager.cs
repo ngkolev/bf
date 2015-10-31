@@ -9,9 +9,11 @@ namespace BF
     {
         public ConsoleManager(string[] args)
         {
+            IO = new ConsoleInputOutput();
             ArgumentParser = new ArgumentParser(args);
         }
 
+        private IInputOutput IO { get; set; }
         private ArgumentParser ArgumentParser { get; set; }
 
         public void Run(string[] args)
@@ -28,11 +30,9 @@ namespace BF
 
         private void WalkProgramFromArguments()
         {
-            var io = new ConsoleInputOutput();
-
             var walker = ArgumentParser.HasPrettyPrintFlag
-                ? (IWalker)new PrettyPrintWalker(io)
-                : (IWalker)new ExecuteWalker(io);
+                ? (IWalker)new PrettyPrintWalker(IO)
+                : (IWalker)new ExecuteWalker(IO);
 
             var fileReader = new FileReader(ArgumentParser.FilePath);
             var programCode = fileReader.Read();
@@ -51,9 +51,16 @@ namespace BF
             program.Accept(walker);
         }
 
-        private static void PrintHelp()
+        private void PrintHelp()
         {
-            throw new System.NotImplementedException();
+            var text = $@"
+Brainfuck interpreter
+
+Use: {System.AppDomain.CurrentDomain.FriendlyName} [-p] [-h] [PATH]
+    -p - pretty print
+    -h - prints this help";
+
+            IO.WriteText(text);
         }
     }
 }

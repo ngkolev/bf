@@ -7,7 +7,7 @@ namespace BF.Core.Walkers
 {
     class PrettyPrintWalker : IWalker
     {
-        public PrettyPrintWalker(ConsoleInputOutput io)
+        public PrettyPrintWalker(IInputOutput io)
         {
         }
 

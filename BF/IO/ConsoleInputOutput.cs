@@ -14,5 +14,10 @@ namespace BF.IO
         {
             Console.Write(character);
         }
+
+        public void WriteText(string text)
+        {
+            Console.WriteLine(text);
+        }
     }
 }
