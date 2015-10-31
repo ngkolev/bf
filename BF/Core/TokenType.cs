@@ -10,5 +10,6 @@ namespace BF.Core
         ReadCharacter,
         LoopStart,
         LoopEnd,
+        Comment,
     }
 }
