@@ -25,7 +25,7 @@ namespace BF.Core
 
         private string Code { get; set; }
 
-        public ICollection<TokenType> ReadTokens()
+        public IList<TokenType> ReadTokens()
         {
             return Code.Select(c => Mapping[c]).ToList();
         }

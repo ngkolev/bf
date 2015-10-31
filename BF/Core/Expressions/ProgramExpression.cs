@@ -8,13 +8,19 @@ using BF.Core.Abstraction;
 
 namespace BF.Core.Expressions
 {
-    class ProgramExpression: IExpression
+    internal class ProgramExpression : IExpression
     {
+        public ProgramExpression()
+        {
+            Expressions = new List<IExpression>();
+        }
+
         public void Accept(IWalker walker)
         {
             walker.Walk(this);
         }
 
-        public ICollection<IExpression> Expressions { get; set; }
+        public ICollection<IExpression> Expressions { get; private set; }
+        public static ProgramExpression NullExpression { get; } = new ProgramExpression();
     }
 }
