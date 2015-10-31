@@ -31,7 +31,7 @@ namespace BF.Core
         public IList<TokenType> ReadTokens()
         {
             var result = new List<TokenType>();
-            for (int i = 0; i < Code.Length; i++)
+            for (var i = 0; i < Code.Length; i++)
             {
                 var character = Code[i];
                 var token = Mapping[character];
