@@ -17,12 +17,12 @@ namespace BF.Core.Walkers
 
         public void Walk(DataValueDecrementExpression expression)
         {
-            Context.Value--;
+            Context.DecrementValue();
         }
 
         public void Walk(DataValueIncrementExpression expression)
         {
-            Context.Value++;
+            Context.IncrementValue();
         }
 
         public void Walk(DataPointerDecrementExpression expression)
@@ -37,19 +37,17 @@ namespace BF.Core.Walkers
 
         public void Walk(WriteCharacterExpression expression)
         {
-            var readCharacter = IO.ReadChar();
-            Context.Value = readCharacter;
+            Context.Value = IO.ReadChar();
         }
 
         public void Walk(ReadCharacterExpression expression)
         {
-            var value = Context.Value;
-            IO.WriteChar(value);
+            IO.WriteChar(Context.Value);
         }
 
         public void Walk(LoopExpression expression)
         {
-            while (Context.Value != '\0')
+            while (Context.Value!= '\0')
             {
                 expression.Body.Accept(this);
             }
