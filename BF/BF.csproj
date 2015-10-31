@@ -49,6 +49,7 @@
     <Compile Include="Core\DataValueDecrement.cs" />
     <Compile Include="Core\DataValueIncrement.cs" />
     <Compile Include="Core\IExpression.cs" />
+    <Compile Include="Core\IInputOutput.cs" />
     <Compile Include="Core\IWalker.cs" />
     <Compile Include="Core\LoopEnd.cs" />
     <Compile Include="Core\LoopStart.cs" />
@@ -58,6 +59,7 @@
     <Compile Include="Core\Interpreter.cs" />
     <Compile Include="Core\Lexer.cs" />
     <Compile Include="Core\WriteCharacter.cs" />
+    <Compile Include="IO\ConsoleInputOutput.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

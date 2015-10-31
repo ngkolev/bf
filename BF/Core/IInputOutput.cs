@@ -4,12 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BF
+namespace BF.Core
 {
-    static class Program
+    interface IInputOutput
     {
-        static void Main(string[] args)
-        {
-        }
+        char ReadChar();
+        void WriteChar(char character);
     }
 }
