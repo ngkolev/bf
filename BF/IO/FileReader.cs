@@ -1,4 +1,5 @@
 using System;
+using System.IO;
 
 namespace BF.IO
 {
@@ -6,12 +7,14 @@ namespace BF.IO
     {
         public FileReader(string filePath)
         {
-            throw new NotImplementedException();
+            FilePath = filePath;
         }
+
+        private string FilePath { get; set; }
 
         public string Read()
         {
-            throw new NotImplementedException();
+            return File.ReadAllText(FilePath);
         }
     }
 }
